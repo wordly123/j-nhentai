@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=NHentai
+Comment=A cross-platform app made for e-hentai & exhentai by Flutter.
+Exec=jhentai
+Icon=top.jtmonster.jhentai
+Categories=Network;Graphics
+Terminal=false

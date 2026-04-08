@@ -1,0 +1,138 @@
+name: Bug Report
+description: 提交一个应用缺陷 / Create a bug report
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交应用缺陷前，请首先完成文末的自查步骤
+        Please finish verify steps which list in the end first before Create a bug report
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤 / Step to reproduce
+      description: |
+        请从启动应用开始，描述bug完整的复现流程，若流程较为复杂可以附带录屏
+        Describe how to reproduce it, with screen recording if it's too complicated
+      placeholder: |
+        1.
+        2.
+        3.
+        [录屏] / [Screen recording]
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为 / Expected behaviour
+      description: |
+        在此处说明正常情况下应用的预期行为
+        Describe what should happened here
+      placeholder: |
+        它应该XXX...
+        It should be ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为 / Actual Behaviour
+      description: |
+        在此处描绘应用的实际行为，最好附上截图
+        Describe what actually happened here, screenshots is better
+      placeholder: |
+        实际上它XXX...
+        Actually it ...
+        [截图] / [Screenshots]
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: 应用日志 / App logs
+      description: |
+        您可以通过设置-高级-查看日志-最近一条日志来获得日志文件
+        请注意，您必须复现一遍bug流程后，日志中才会记录相关信息
+        此外，如果您提交的问题与下载相关，请打开记录全部日志的开关，重启应用后附上全部的日志文件
+        You can get logs file in Settings - Advanced - Open Log
+        Attention, you must reproduce the bug before get logs
+        Besides, if your issue is about download, please turn on `Enable Verbose Logging` and attach all logs
+      placeholder: logs
+    validations:
+      required: true
+
+  - type: textarea
+    id: setting
+    attributes:
+      label: 应用设置 / App Settings
+      description: |
+        请附上与你的提问相关的所有应用设置截图，如您确定您的问题与应用设置无关，可以跳过此项
+        Attach all app settings screenshots related to your question. If you are sure that your question is not related to the app settings, you can skip this item
+      placeholder: |
+        [截图] / [Screenshots]
+    validations:
+      required: false
+
+  - type: textarea
+    id: more
+    attributes:
+      label: 备注 / Addition details
+      description: |
+        在此处写下其他您想说的内容
+        Describe addition details here
+      placeholder: |
+        其他有用的信息与附件
+        Additional details and attachments
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: 应用版本号 / App version
+      description: |
+        您可以在`设置` - `关于`处找到版本号 
+        You can get version code in `Settings` - `About`
+      placeholder: 7.0.0+124
+    validations:
+      required: true
+
+  - type: input
+    id: system
+    attributes:
+      label: 操作系统版本 / operating system version
+      description: |
+        操作系统名称 + 内核版本
+        system name + system version
+      placeholder: Windows 10
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: 设备型号 / Device model
+      description: 在此填入设备型号 / Put device model here
+      placeholder: OnePlus 7 Pro, Xiaomi 12 Ultra
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: check
+    attributes:
+      label: 自查步骤 / Verify steps
+      description: |
+        请确认您已经遵守所有必选项
+        Please ensure you have obtained all needed options
+      options:
+        - label: 您已确认这是当前仓库版本中的问题，并已使用最新版本复现 / You have confirmed this issue exists in this repository and reproduced it on the latest version
+          required: true
+        - label: 您已搜索过当前仓库的历史 Issue，没有找到重复问题 / I have searched existing issues in this repository and found no duplicate
+          required: true
+        - label: 您确保这个 Issue 只提及一个问题。如果您有多个问题报告，烦请发起多个 Issue / Ensure there is only one bug report in this issue. Please make mutiply issue for mutiply bugs
+          required: true
+        - label: 您确保已使用最新版本测试，并且该问题在最新版本中并未解决 / This bug have not solved in latest version
+          required: true
